@@ -14,8 +14,6 @@ export class AppComponent {
   constructor(private _freeApiService: freeApiService) {
 
   }
-
-  // lstcomments:Comments[];
   
   ngOnInit() {
 
