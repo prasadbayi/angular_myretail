@@ -1,0 +1,33 @@
+
+<style>
+  table, td, th {
+    border: 1px solid black;
+
+  }
+
+  table {
+
+    border-collapse: collapse;
+    width: 90%;
+  }
+
+  th {
+    height: 50px;
+  }
+
+</style>
+
+<h2>Get Request (http://localhost:8082/catalog/products)</h2>
+
+<table>
+  <tr>
+    <th>Product Id</th>
+    <th>Product Name</th>
+  </tr>
+
+  <tr *ngFor="let com of lstcomments">
+    <td> {{com.id}}</td> 
+    <td> {{com.name}}</td> 
+  </tr>
+
+</table>
