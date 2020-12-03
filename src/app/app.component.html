@@ -25,9 +25,26 @@
     <th>Product Name</th>
   </tr>
 
-  <tr *ngFor="let com of lstcomments">
+  <tr *ngFor="let com1 of list_catalog_products">
+    <td> {{com1.id}}</td> 
+    <td> {{com1.name}}</td> 
+  </tr>
+
+</table>
+
+<h2>Product Prices from My Retail: Get Request (http://localhost:8082/pricing/products)</h2>
+
+<table>
+  <tr>
+    <th>Product Id</th>
+    <th>Value</th>
+    <th>Currency Code</th>
+  </tr>
+
+  <tr *ngFor="let com of list_myretail_product_pricing">
     <td> {{com.id}}</td> 
-    <td> {{com.name}}</td> 
+    <td> {{com.value}}</td> 
+    <td>{{com.currency_code}}</td>
   </tr>
 
 </table>

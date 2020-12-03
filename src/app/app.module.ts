@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { freeApiService } from './services/freeapi.service';
+import { catalogApiService } from './services/catalogapi.service';
+import { myRetailApiService } from './services/myretailapi.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { freeApiService } from './services/freeapi.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [freeApiService],
+  providers: [catalogApiService, myRetailApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

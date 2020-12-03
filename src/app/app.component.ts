@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { freeApiService } from './services/freeapi.service';
-// import { Comments } from './classes/comments';
+import { catalogApiService } from './services/catalogapi.service';
+import { myRetailApiService } from './services/myretailapi.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,22 +10,34 @@ import { freeApiService } from './services/freeapi.service';
 })
 export class AppComponent {
   title = 'my-app - bayi';
-  lstcomments: any;
+  list_catalog_products: any;
+  list_myretail_product_pricing: any;
 
-  constructor(private _freeApiService: freeApiService) {
+  constructor(private _catalogApiService: catalogApiService, private _myRetailApiService: myRetailApiService) {
 
   }
-  
+ 
   ngOnInit() {
 
-    this._freeApiService.getcomments()
+    this._catalogApiService.getCatalogProducts()
+    .subscribe
+    (
+      data1=>
+      {
+          this.list_catalog_products = data1;
+
+      }
+    )
+
+    this._myRetailApiService.getProductPrices()
     .subscribe
     (
       data=>
       {
-          this.lstcomments = data;
+          this.list_myretail_product_pricing = data;
 
       }
     )
   }
+
 }
